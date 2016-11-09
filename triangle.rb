@@ -15,6 +15,10 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  if (a + b <= c) || (a + c <= b) || (b + c <= a) ||
+    a == 0 || b == 0 || c == 0
+    raise TriangleError
+  end
   return :equilateral if a == b && b == c
   return :isosceles if a == b || b == c || a == c
   :scalene
